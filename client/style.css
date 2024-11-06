@@ -1,0 +1,200 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    transition: 200ms;
+}
+nav {
+    height: 80px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#content{
+    margin-top: 100px;
+}
+#cart{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: larger;
+    transition: 300ms;
+}
+#cart :hover{
+    /* background-color: #000000; */
+    color: rgb(39, 107, 197);
+    transform: scale(1.05);
+}
+
+#logo{
+    background-image: url(/client/icons/logo2.webp);
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+.nav-spacing {
+    padding: 1rem;
+}
+
+#heroBtn{
+    background-color: #A4BFEB;
+    color: white;
+    /* padding: 10px 20px; */
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 15rem;
+    cursor: pointer;
+    transition: 200ms;
+    text-align: center;
+}
+#heroBtn:hover{
+    background-color: #A4BFEB;
+}
+
+#links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 30px;
+    display: inline-block;
+    transition: 200ms;
+
+}
+
+#links a:hover {
+    background-color: #A4BFEB;
+    color: rgb(255, 255, 255);
+}
+#hamburger {
+    display: none;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+nav img{
+    width: 25px;
+    height: 25px;
+    color: white;
+}
+
+#herohome{
+    background-image: url(/client/images/herohome.webp);
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    padding-left: 2rem;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+
+#login-form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px #A4BFEB;
+}
+
+#login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #A4A8D1;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 200ms;
+}
+
+#login-form button:hover {
+    background-color: #000000d7;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    #links {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #ffffff;
+    }
+
+    #links a {
+        padding: 15px;
+        text-align: left;
+        background-color: #ffffff;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    /* Show links when menu is open */
+    #links{
+        display: flex;
+        margin-top: 20px;
+    }
+    #links a{
+        text-align: center;
+    }
+    #links.closed{
+        display: none;
+    }
+}

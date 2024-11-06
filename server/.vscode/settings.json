@@ -1,0 +1,32 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "74.211.17.210",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "home",
+            "database": "tracking",
+            "username": "aston",
+            "password": "schoolpas"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "74.211.17.210",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "homeschool",
+            "database": "tracking",
+            "username": "school",
+            "password": "schoolpas"
+        }
+    ]
+}
