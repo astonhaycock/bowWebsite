@@ -3,6 +3,9 @@
 
 ## Database Tables
 
+## Admin login
+username = admin
+password = admin
 
 
 ### 1. Users Table
@@ -36,7 +39,7 @@ created_at TIMESTAMP);
 | bow_draw_weight | decimal(5,2)    | Draw weight of the bow in pounds |
 | bow_draw_length | decimal(5,2)    | Draw length of the bow in inches |
 | bow_price       | decimal(5,2)    | Price of the bow                 |
-| bow_image_url   | varchar(255)    | URL of the bow's image           |
+| bow_image_url   | varchar(500)    | URL of the bow's image           |
 
 ## Schema
 
