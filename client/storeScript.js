@@ -1,6 +1,11 @@
+const apiUrl = window.location.protocol === 'file:' ? 'http://localhost:8080' : '';
+//  Local API server during development || Production API
+
+
+
 async function fetchBows() {
     try {
-        const response = await fetch('http://localhost:8080/bows', {
+        const response = await fetch(`${apiUrl}/bows`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -110,7 +115,7 @@ function addEditEventListener(bowDiv, bow) {
             };
 
             try {
-                const response = await fetch(`http://localhost:8080/bows/${bow.bow_id}`, {
+                const response = await fetch(`${apiUrl}/bows/${bow.bow_id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -136,7 +141,7 @@ function addEditEventListener(bowDiv, bow) {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:8080/bows/${bow.bow_id}`, {
+            const response = await fetch(`${apiUrl}/bows/${bow.bow_id}`, {
                 method: 'DELETE'
             });
             const result = await response.json();
@@ -218,7 +223,7 @@ async function checkLogin() {
     let admin = false;
     if (password) {
         try {
-            const response = await fetch('http://localhost:8080/admins', {
+            const response = await fetch(`${apiUrl}/admins`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -298,7 +303,7 @@ document.getElementById('add-bow').addEventListener('click', () => {
         };
 
         try {
-            const response = await fetch('http://localhost:8080/bows', {
+            const response = await fetch(`${apiUrl}/bows`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

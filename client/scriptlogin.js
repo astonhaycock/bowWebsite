@@ -1,3 +1,8 @@
+const apiUrl = window.location.protocol === 'file:' ? 'http://localhost:8080' : '';
+//  Local API server during development || Production API
+
+
+
 function storePassword(password, user) {
     localStorage.setItem("password", password);
     localStorage.setItem("user", user);
@@ -27,7 +32,7 @@ async function checkLogin(user, password) {
     let admin = false;
     if (password) {
         try {
-            const response = await fetch('http://localhost:8080/admins', {
+            const response = await fetch(`${apiUrl}/admins`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
