@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bowwebsite-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bowwebsite-frontend
+  template:
+    metadata:
+      labels:
+        app: bowwebsite-frontend
+    spec:
+      containers:
+      - name: bowwebsite-frontend
+        image: dylanstoddard134/bowwebsite-client
+        ports:
+        - containerPort: 80
+

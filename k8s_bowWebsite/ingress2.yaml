@@ -1,0 +1,44 @@
+# Ingress for the backend service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bowwebsite-ingress
+  annotations:
+    projectcontour.io/rewrite-target: /$2
+spec:
+  rules:
+    - host: dylan.keatonhall.com
+      http:
+        paths:
+          - path: /bows
+            pathType: Prefix
+            backend:
+              service:
+                name: bowwebsite-backend-service
+                port:
+                  number: 8080
+          - path: /admins
+            pathType: Prefix
+            backend:
+              service:
+                name: bowwebsite-backend-service
+                port:
+                  number: 8080
+---
+# Ingress for the frontend service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bowwebsite-ingress
+spec:
+  rules:
+    - host: dylan.keatonhall.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bowwebsite-frontend-service
+                port:
+                  number: 80

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bowwebsite-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bowwebsite-backend
+  template:
+    metadata:
+      labels:
+        app: bowwebsite-backend
+    spec:
+      containers:
+      - name: bowwebsite-backend
+        image: dylanstoddard134/bowwebsite-server
+        ports:
+        - containerPort: 8080
+
